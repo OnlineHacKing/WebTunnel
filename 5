@@ -8,33 +8,6 @@ check_status() {
 }
 
 
-## server
-server1() {
-clear
-logo1
-echo " "
-echo -e "\e[1;96m< < < ====================================================== > > >\e[m "
-echo ""
-                           echo ""
-			   ( sleep 2 ) &> /dev/null & connection
-                           echo ""
-                           ( sleep 4 ) &> /dev/null & spin_1
-			   echo ""
-			   (sleep 4) &> /dev/null & spin_2
-			   echo ""
-			   tput civis
-			   ( sleep 8 ) &> /dev/null & spinner_1
-                           echo ""
-			   php -S 127.0.0.1:4444 > /dev/null 2>&1 &
-			   ( sleep 4 ) &> /dev/null & spinner_2
-			   echo ""
-			   ( sleep 4 ) &> /dev/null & spinner_3
-			   echo ""
-			   sleep 2
-			   echo ""
-
-}
-
 
 
 function select_url() {
@@ -123,6 +96,7 @@ links_n
 fi
 if [[ $portfrd == "3" || $portfrd == "03" || $portfrd == "localxpose" ]]; then
 echo ""
+install_localxpose
 start_loclx
 clear
 logo_last
