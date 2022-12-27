@@ -1,41 +1,32 @@
 #!/bin/bash
 echo ""
 
+clear
+echo ""
+echo ""
+printf "\e[100;330m[\e[10m **** ]\e[1;40m\e[10m OnlineHacking :\e[1;32m Join Telegram Channel \e[1;33m @OnlineHacking  !\e[0m"
+echo ""
+echo ""
+sleep 3
+echo ""
+check_status
+check_update
+sleep 2
+echo ""
+clear
+echo -e $'' 
+clear
+logo1
+logo_text
+echo ""
+
+
+
 check_status() {
         echo -ne "\e[33m Internet Status : "
         timeout 3s curl -fIs "https://api.github.com" > /dev/null
         [ $? -eq 0 ] && echo -e "\e[92m Online\e[0m" || echo -e "\e[31mOffline\e[0m"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -553,7 +544,7 @@ echo -e "\e[95m
      ██║  ██║██║  ██║╚██████╗██║  ██╗██║██║ ╚████║╚██████╔╝  
      ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝  \e[95;1m \e[0m\n"
   echo""    
-  echo -e $'\e[1;33m\e[0m\e[1;31m  ██████████\e[0m'"\e[1;37m██████████"'\e[1;33m\e[0m\e[0;32m██████████\e[0m' '\e[1;32m\e[0m\e[1;33m FREE FIRE PHISHING TOOL \e[0m''\e[1;37m\e[0m\e[1;37m [v 2.8] \e[0m'                                       
+  echo -e $'\e[1;33m\e[0m\e[1;31m  ██████████\e[0m'"\e[1;37m██████████"'\e[1;33m\e[0m\e[0;32m██████████\e[0m' '\e[1;32m\e[0m\e[1;33m FREE FIRE PHISHING TOOL \e[0m''\e[1;37m\e[0m\e[1;37m [v 1.1] \e[0m'                                       
   echo ""
    echo -e $'\e[1;33m\e[0m\e[1;33m  [\e[0m\e[1;32m Github :- \e[36mhttps://github.com/OnlineHacKing/FreeFire-Phishing \e[0m\e[1;32m\e[0m\e[1;33m] \e[0m'
    echo ""
