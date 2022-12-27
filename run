@@ -247,7 +247,7 @@ fi
 
 
 
-function select_url() {
+select_url() {
 clear
 logo3
 echo -e "\e[1;96m  \e[m "
